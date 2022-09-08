@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="icon"
+      href="https://bcw.blob.core.windows.net/public/img/9977764104160066"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+      integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://kit.fontawesome.com/c01e6e9bae.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="app/App.js" type="module"></script>
+    <link rel="stylesheet" href="assets/style/main.css" />
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <title>Rain Money</title>
+  </head>
+
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+      min-height: 5px;
+    }
+
+    body.debug .row {
+      outline: 2px dashed red;
+      outline-offset: -2px;
+      min-height: 5px;
+    }
+
+    body.debug [class*="col-"] {
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+      min-height: 5px;
+    }
+  </style>
+
+  <body class="debug">
+    <header>
+      <nav
+        class="navbar navbar-dark navbar-expand bg-dark text-light no-select d-flex gap-2"
+      >
+        <a class="navbar-brand ms-3" href="#">
+          <i class="fa-solid fa-cloud-rain"></i>
+          <span class="ms-2">Rain Money</span>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <div class="container-fluid bg-dark p-5">
+        <div class="row">
+          <!-- SECTION FORM STARTS HERE  -->
+          <div class="col-md-4 col-lg-6">
+            <div class="card bg-light px-5 py-4">
+              <p>
+                Stash away money for the things you often forget. The things you
+                want but might not always be at the front of your mind.
+              </p>
+              <form onsubmit="app.budgetsController.createBudget()">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control bg-secondary"
+                    name="budgetName"
+                    placeholder="Budget Name"
+                    required
+                  />
+                  <label for="budgetName">Budget Name</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control bg-secondary"
+                    name="budgetGoal"
+                    placeholder="Set a Price"
+                    required
+                  />
+                  <label for="budgetGoal">Set a Price</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <select
+                    class="form-select bg-secondary"
+                    name="budgetType"
+                    aria-label="Floating label select example"
+                    required
+                  >
+                    <option selected>Choose your goal</option>
+                    <option value="1">Item to buy</option>
+                    <option value="2">Trip to budget</option>
+                    <option value="3">Furniture to replace</option>
+                  </select>
+                  <label for="budgetType">Select</label>
+                </div>
+                <button class="btn btn-primary" type="submit">Create</button>
+              </form>
+            </div>
+          </div>
+          <!-- SECTION BUDGETS ARE HERE -->
+          <div class="col-md-8 col-lg-6">
+            <div class="row" id="budgets"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-dark text-light">
+      <div class="text-center no-select">
+        <p><small>Made with 💖 by CodeWorks</small></p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+      integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
